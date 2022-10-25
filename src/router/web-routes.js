@@ -63,6 +63,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/w/reset-password",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-reset-password",
+        component: () =>
+          import("src/pages/web/account-recovery/ResetPasswordPage.vue"),
+      },
+    ],
+  },
 ];
 
 export default routes;
