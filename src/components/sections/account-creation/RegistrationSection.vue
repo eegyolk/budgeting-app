@@ -99,10 +99,10 @@
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
-          to="/w/terms"
           no-caps
           flat
           unelavated
+          @click="onShowTermsOfService"
         />
 
         <span class="q-px-xs text-caption text-grey-8">and</span>
@@ -112,10 +112,10 @@
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
-          to="/w/privacy-policy"
           no-caps
           flat
           unelavated
+          @click="onShowPrivacyPolicy"
         />
 
         <span class="text-caption text-grey-8">.</span>
@@ -149,9 +149,37 @@
 
 <script>
 import { defineComponent } from "vue";
+import { useQuasar } from "quasar";
+import TermsOfServiceDialog from "components/dialogs/TermsOfServiceDialog.vue";
+import PrivacyPolicyDialog from "components/dialogs/PrivacyPolicyDialog.vue";
+import QuickDialog from "components/QuickDialog.vue";
 
 export default defineComponent({
   name: "RegistrationSection",
+
+  setup() {
+    const $q = useQuasar();
+
+    return {
+      onShowTermsOfService() {
+        $q.dialog({
+          component: QuickDialog,
+          componentProps: {
+            subComponent: TermsOfServiceDialog,
+          },
+        });
+      },
+
+      onShowPrivacyPolicy() {
+        $q.dialog({
+          component: QuickDialog,
+          componentProps: {
+            subComponent: PrivacyPolicyDialog,
+          },
+        });
+      },
+    };
+  },
 });
 </script>
 
