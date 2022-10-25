@@ -116,9 +116,20 @@
 
 <script>
 import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "LoginSection",
+
+  setup() {
+    const router = useRouter();
+
+    return {
+      onLogin() {
+        router.replace({ name: "w-tracker-home" });
+      },
+    };
+  },
 });
 </script>
 
