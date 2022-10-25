@@ -1,17 +1,17 @@
 <template>
   <q-page class="q-pa-md flex flex-center">
-    <LoginSection />
+    <RegistrationSection />
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import LoginSection from "src/components/sections/authentication/LoginSection.vue";
+import RegistrationSection from "src/components/sections/account-creation/RegistrationSection.vue";
 
 export default defineComponent({
-  name: "LoginPage",
+  name: "RegistrationPage",
   components: {
-    LoginSection,
+    RegistrationSection,
   },
 });
 </script>

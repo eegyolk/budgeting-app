@@ -1,0 +1,158 @@
+<template>
+  <div class="q-pa-md" style="width: 320px">
+    <div class="row text-center">
+      <div class="col col-sm">
+        <img
+          src="~assets/account-creation/register-img.svg"
+          style="width: 200px; height: 200px"
+        />
+      </div>
+    </div>
+
+    <div class="row text-center q-pt-md">
+      <div class="col col-sm">
+        <span class="text-h6 text-weight-medium text-grey-8">
+          Create your account
+        </span>
+      </div>
+    </div>
+
+    <div class="row q-pt-md">
+      <div class="col col-sm">
+        <span
+          :class="{
+            'text-body2': true,
+            'text-grey-8': true,
+            'text-red-10': false,
+          }"
+        >
+          Full Name
+        </span>
+
+        <q-input
+          placeholder="Your full name"
+          hide-bottom-space
+          no-error-icon
+          outlined
+          dense
+        />
+      </div>
+    </div>
+
+    <div class="row q-pt-md">
+      <div class="col col-sm">
+        <span
+          :class="{
+            'text-body2': true,
+            'text-grey-8': true,
+            'text-red-10': false,
+          }"
+        >
+          Email Address
+        </span>
+
+        <q-input
+          placeholder="Your email address"
+          type="email"
+          hide-bottom-space
+          no-error-icon
+          outlined
+          dense
+        />
+      </div>
+    </div>
+
+    <div class="row q-pt-md">
+      <div class="col col-sm">
+        <span
+          :class="{
+            'text-body2': true,
+            'text-grey-8': true,
+            'text-red-10': false,
+          }"
+        >
+          Password
+        </span>
+
+        <q-input
+          placeholder="Your password"
+          hide-bottom-space
+          no-error-icon
+          outlined
+          dense
+        >
+          <template v-slot:append>
+            <q-icon class="cursor-pointer" />
+          </template>
+        </q-input>
+      </div>
+    </div>
+
+    <div class="row text-center q-pt-md">
+      <div class="col col-sm">
+        <q-toggle color="primary" keep-color dense />
+
+        <span class="q-px-xs text-caption text-grey-8">I accept the</span>
+
+        <q-btn
+          label="Terms"
+          class="text-caption text-weight-bold"
+          color="primary"
+          padding="none"
+          to="/w/terms"
+          no-caps
+          flat
+          unelavated
+        />
+
+        <span class="q-px-xs text-caption text-grey-8">and</span>
+
+        <q-btn
+          label="Privacy Policy"
+          class="text-caption text-weight-bold"
+          color="primary"
+          padding="none"
+          to="/w/privacy-policy"
+          no-caps
+          flat
+          unelavated
+        />
+
+        <span class="text-caption text-grey-8">.</span>
+      </div>
+    </div>
+
+    <div class="row q-pt-md">
+      <q-btn class="full-width" color="primary" label="Register" no-caps />
+    </div>
+
+    <div class="row text-center q-pt-md">
+      <div class="col col-sm">
+        <span class="q-px-xs text-caption text-grey-8">
+          Already have an account?
+        </span>
+
+        <q-btn
+          label="Login now."
+          class="text-caption text-weight-bold"
+          color="primary"
+          padding="none"
+          to="/w/login"
+          no-caps
+          flat
+          unelavated
+        />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "RegistrationSection",
+});
+</script>
+
+<style lang="scss" scoped></style>
