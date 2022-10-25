@@ -77,7 +77,7 @@ import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
 export default defineComponent({
-  name: "RegistrationSection",
+  name: "VerifyAccountSection",
 
   setup() {
     const router = useRouter();

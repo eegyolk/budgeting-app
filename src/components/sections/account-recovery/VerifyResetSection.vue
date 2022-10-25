@@ -3,7 +3,7 @@
     <div class="row text-center">
       <div class="col col-sm">
         <img
-          src="~assets/account-recovery/forgot-password-img.svg"
+          src="~assets/account-recovery/verify-reset-img.svg"
           style="width: 200px; height: 200px"
         />
       </div>
@@ -12,25 +12,27 @@
     <div class="row text-center q-pt-md">
       <div class="col col-sm">
         <span class="text-h6 text-weight-medium text-grey-8">
-          Forgot your password
+          Verify your reset code
         </span>
       </div>
     </div>
 
     <div class="row text-justify q-pt-md">
-      <div class="col col-sm">
-        <span class="text-caption text-grey-8">
-          Don't worry! It happens all the time. Please enter the email address
-          associated with your account.
+      <div>
+        <span class="text-body2 text-grey-8">
+          We have sent password reset code to your email:
         </span>
+        <span class="text-body2 text-grey-8"> me@email.com </span>
       </div>
     </div>
 
     <div class="row q-pt-md">
       <div class="col col-sm">
         <q-input
-          placeholder="Your email address"
-          type="email"
+          placeholder="Enter your password reset code"
+          input-class="text-center  "
+          maxlength="6"
+          mask="######"
           hide-bottom-space
           no-error-icon
           outlined
@@ -43,27 +45,27 @@
       <q-btn
         class="full-width"
         color="primary"
-        label="Submit"
+        label="Verify"
         no-caps
-        @click="onSubmit"
+        @click="onVerify"
       />
     </div>
 
     <div class="row text-center q-pt-md">
       <div class="col col-sm">
         <span class="q-px-xs text-caption text-grey-8">
-          Do you have your password?
+          Didn't receive code?
         </span>
 
         <q-btn
-          label="Login now."
+          label="Resend"
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
-          to="/w/login"
           no-caps
           flat
           unelavated
+          @click="onResend"
         />
       </div>
     </div>
@@ -75,15 +77,17 @@ import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
 export default defineComponent({
-  name: "ForgotPasswordSection",
+  name: "VerifyResetSection",
 
   setup() {
     const router = useRouter();
 
     return {
-      onSubmit() {
-        router.replace({ name: "w-verify-reset" });
+      onVerify() {
+        router.replace({ name: "w-reset-password" });
       },
+
+      onResend() {},
     };
   },
 });

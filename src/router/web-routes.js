@@ -51,6 +51,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/w/verify-reset",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-verify-reset",
+        component: () =>
+          import("src/pages/web/account-recovery/VerifyResetPage.vue"),
+      },
+    ],
+  },
 ];
 
 export default routes;
