@@ -1,17 +1,17 @@
 <template>
   <q-page class="q-pa-md flex flex-center">
-    <RegistrationSection />
+    <ForgotPasswordSection />
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import RegistrationSection from "components/sections/account-creation/RegistrationSection.vue";
+import ForgotPasswordSection from "components/sections/account-recovery/ForgotPasswordSection.vue";
 
 export default defineComponent({
-  name: "RegistrationPage",
+  name: "ForgotPasswordPage",
   components: {
-    RegistrationSection,
+    ForgotPasswordSection,
   },
 });
 </script>

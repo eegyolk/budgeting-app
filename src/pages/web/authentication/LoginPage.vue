@@ -6,7 +6,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import LoginSection from "src/components/sections/authentication/LoginSection.vue";
+import LoginSection from "components/sections/authentication/LoginSection.vue";
 
 export default defineComponent({
   name: "LoginPage",

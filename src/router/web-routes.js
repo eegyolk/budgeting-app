@@ -25,6 +25,20 @@ const routes = [
       },
     ],
   },
+
+  // Account recovery
+  {
+    path: "/w/forgot-password",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-forgot-password",
+        component: () =>
+          import("src/pages/web/account-recovery/ForgotPasswordPage.vue"),
+      },
+    ],
+  },
 ];
 
 export default routes;
