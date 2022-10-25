@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pa-md flex flex-center">
-    <RegistrationSection />
+    <registration-section />
   </q-page>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pa-md flex flex-center">
-    <ForgotPasswordSection />
+    <forgot-password-section />
   </q-page>
 </template>
 

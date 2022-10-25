@@ -123,7 +123,13 @@
     </div>
 
     <div class="row q-pt-md">
-      <q-btn class="full-width" color="primary" label="Register" no-caps />
+      <q-btn
+        class="full-width"
+        color="primary"
+        label="Register"
+        no-caps
+        @click="onRegister"
+      />
     </div>
 
     <div class="row text-center q-pt-md">
@@ -150,6 +156,7 @@
 <script>
 import { defineComponent } from "vue";
 import { useQuasar } from "quasar";
+import { useRouter } from "vue-router";
 import TermsOfServiceDialog from "components/dialogs/TermsOfServiceDialog.vue";
 import PrivacyPolicyDialog from "components/dialogs/PrivacyPolicyDialog.vue";
 import QuickDialog from "components/QuickDialog.vue";
@@ -159,6 +166,7 @@ export default defineComponent({
 
   setup() {
     const $q = useQuasar();
+    const router = useRouter();
 
     return {
       onShowTermsOfService() {
@@ -177,6 +185,10 @@ export default defineComponent({
             subComponent: PrivacyPolicyDialog,
           },
         });
+      },
+
+      onRegister() {
+        router.replace({ name: "w-verify-account" });
       },
     };
   },

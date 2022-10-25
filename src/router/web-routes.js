@@ -25,6 +25,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/w/verify-account",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-verify-account",
+        component: () =>
+          import("src/pages/web/account-creation/VerifyAccountPage.vue"),
+      },
+    ],
+  },
 
   // Account recovery
   {
