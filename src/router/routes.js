@@ -5,7 +5,7 @@ import webRoutes from "./web-routes";
 const routes = [
   infoRoutes,
   mobileRoutes,
-  webRoutes,
+  ...webRoutes,
 
   // Always leave this as last one,
   // but you can also remove it
