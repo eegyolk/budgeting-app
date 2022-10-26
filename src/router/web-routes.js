@@ -104,27 +104,13 @@ const routes = [
     ],
   },
   {
-    path: "/w/tracker/income",
+    path: "/w/tracker/transactions",
     component: () => import("src/layouts/WebLayout.vue"),
     children: [
       {
         path: "",
-        name: "w-tracker-income",
-        component: () => import("src/pages/web/tracker/IncomePage.vue"),
-        meta: {
-          isTracker: true,
-        },
-      },
-    ],
-  },
-  {
-    path: "/w/tracker/expenses",
-    component: () => import("src/layouts/WebLayout.vue"),
-    children: [
-      {
-        path: "",
-        name: "w-tracker-expenses",
-        component: () => import("src/pages/web/tracker/ExpensesPage.vue"),
+        name: "w-tracker-transactions",
+        component: () => import("src/pages/web/tracker/TransactionsPage.vue"),
         meta: {
           isTracker: true,
         },

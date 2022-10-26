@@ -44,29 +44,16 @@
           </q-item>
 
           <q-item
-            :active="'w-tracker-income' === getCurrentPathName"
-            to="/w/tracker/income"
+            :active="'w-tracker-transactions' === getCurrentPathName"
+            to="/w/tracker/transactions"
             clickable
             v-ripple
           >
             <q-item-section avatar>
-              <q-icon name="money" />
+              <q-icon name="receipt_long" />
             </q-item-section>
 
-            <q-item-section> Income </q-item-section>
-          </q-item>
-
-          <q-item
-            :active="'w-tracker-expenses' === getCurrentPathName"
-            to="/w/tracker/expenses"
-            clickable
-            v-ripple
-          >
-            <q-item-section avatar>
-              <q-icon name="add_shopping_cart" />
-            </q-item-section>
-
-            <q-item-section> Expenses </q-item-section>
+            <q-item-section> Transactions </q-item-section>
           </q-item>
 
           <q-item
