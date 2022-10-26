@@ -87,6 +87,22 @@ const routes = [
       },
     ],
   },
+
+  // Tracker
+  {
+    path: "/w/tracker/home",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-home",
+        component: () => import("src/pages/web/tracker/HomePage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
 ];
 
 export default routes;
