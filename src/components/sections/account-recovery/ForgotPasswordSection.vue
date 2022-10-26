@@ -56,7 +56,7 @@
         </span>
 
         <q-btn
-          label="Login now."
+          label="Login"
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
@@ -82,7 +82,7 @@ export default defineComponent({
 
     return {
       onSubmit() {
-        router.replace({ name: "w-verify-reset" });
+        router.push({ name: "w-verify-reset" });
       },
     };
   },

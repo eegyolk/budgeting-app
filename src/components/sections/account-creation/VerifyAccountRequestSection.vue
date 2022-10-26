@@ -3,7 +3,7 @@
     <div class="row text-center">
       <div class="col col-sm">
         <img
-          src="~assets/account-creation/verify-account-img.svg"
+          src="~assets/account-creation/verify-account-request-img.svg"
           style="width: 200px; height: 200px"
         />
       </div>
@@ -12,27 +12,25 @@
     <div class="row text-center q-pt-md">
       <div class="col col-sm">
         <span class="text-h6 text-weight-medium text-grey-8">
-          Verify your account
+          Request for verification code
         </span>
       </div>
     </div>
 
     <div class="row text-justify q-pt-md">
-      <div>
-        <span class="text-body2 text-grey-8">
-          We have sent verification code to your email:
+      <div class="col col-sm">
+        <span class="text-caption text-grey-8">
+          Your email address must be registered before you can request for
+          verification code.
         </span>
-        <span class="text-body2 text-grey-8"> me@email.com </span>
       </div>
     </div>
 
     <div class="row q-pt-md">
       <div class="col col-sm">
         <q-input
-          placeholder="Enter your verification code"
-          input-class="text-center  "
-          maxlength="6"
-          mask="######"
+          placeholder="Your email address"
+          type="email"
           hide-bottom-space
           no-error-icon
           outlined
@@ -45,27 +43,27 @@
       <q-btn
         class="full-width"
         color="primary"
-        label="Verify"
+        label="Submit"
         no-caps
-        @click="onVerify"
+        @click="onSubmit"
       />
     </div>
 
     <div class="row text-center q-pt-md">
       <div class="col col-sm">
         <span class="q-px-xs text-caption text-grey-8">
-          Didn't receive code?
+          Account verified?
         </span>
 
         <q-btn
-          label="Resend"
+          label="Login"
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
+          to="/w/login"
           no-caps
           flat
           unelavated
-          @click="onResend"
         />
       </div>
     </div>
@@ -77,17 +75,15 @@ import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
 export default defineComponent({
-  name: "VerifyAccountSection",
+  name: "VerifyAccountRequestSection",
 
   setup() {
     const router = useRouter();
 
     return {
-      onVerify() {
-        router.push({ name: "w-tracker-home" });
+      onSubmit() {
+        router.push({ name: "w-verify-account" });
       },
-
-      onResend() {},
     };
   },
 });

@@ -139,7 +139,7 @@
         </span>
 
         <q-btn
-          label="Login now."
+          label="Login"
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
@@ -188,7 +188,7 @@ export default defineComponent({
       },
 
       onRegister() {
-        router.replace({ name: "w-verify-account" });
+        router.push({ name: "w-verify-account" });
       },
     };
   },

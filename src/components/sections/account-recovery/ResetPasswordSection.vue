@@ -93,7 +93,7 @@ export default defineComponent({
 
     return {
       onReset() {
-        router.replace({ name: "w-login" });
+        router.push({ name: "w-login" });
       },
     };
   },

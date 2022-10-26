@@ -106,11 +106,30 @@
         </span>
 
         <q-btn
-          label="Register now."
+          label="Register"
           class="text-caption text-weight-bold"
           color="primary"
           padding="none"
           to="/w/register"
+          no-caps
+          flat
+          unelavated
+        />
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col col-sm">
+        <span class="q-px-xs text-caption text-grey-8">
+          Account not verified?
+        </span>
+
+        <q-btn
+          label="Verify"
+          class="text-caption text-weight-bold"
+          color="primary"
+          padding="none"
+          to="/w/verify-account-request"
           no-caps
           flat
           unelavated
@@ -132,7 +151,7 @@ export default defineComponent({
 
     return {
       onLogin() {
-        router.replace({ name: "w-tracker-home" });
+        router.push({ name: "w-tracker-home" });
       },
     };
   },

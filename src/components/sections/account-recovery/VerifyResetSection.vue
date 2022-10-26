@@ -84,7 +84,7 @@ export default defineComponent({
 
     return {
       onVerify() {
-        router.replace({ name: "w-reset-password" });
+        router.push({ name: "w-reset-password" });
       },
 
       onResend() {},
