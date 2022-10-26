@@ -103,6 +103,90 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/w/tracker/income",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-income",
+        component: () => import("src/pages/web/tracker/IncomePage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
+  {
+    path: "/w/tracker/expenses",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-expenses",
+        component: () => import("src/pages/web/tracker/ExpensesPage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
+  {
+    path: "/w/tracker/analytics",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-analytics",
+        component: () => import("src/pages/web/tracker/AnalyticsPage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
+  {
+    path: "/w/tracker/reports",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-reports",
+        component: () => import("src/pages/web/tracker/ReportsPage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
+  {
+    path: "/w/tracker/tips",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-tips",
+        component: () => import("src/pages/web/tracker/TipsPage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
+  {
+    path: "/w/tracker/profile",
+    component: () => import("src/layouts/WebLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "w-tracker-profile",
+        component: () => import("src/pages/web/tracker/ProfilePage.vue"),
+        meta: {
+          isTracker: true,
+        },
+      },
+    ],
+  },
 ];
 
 export default routes;

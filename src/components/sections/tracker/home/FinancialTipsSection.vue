@@ -4,7 +4,7 @@
       <q-card-section class="bg-green-1 rounded-borders">
         <div class="text-left text-h6 text-grey-9 q-mb-xs">
           <q-avatar color="green-3">
-            <q-icon name="feed" />
+            <q-icon name="newspaper" />
           </q-avatar>
 
           Latest Financial Tips
