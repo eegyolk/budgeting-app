@@ -83,19 +83,6 @@
           </q-item>
 
           <q-item
-            :active="'w-tracker-tips' === getCurrentPathName"
-            to="/w/tracker/tips"
-            clickable
-            v-ripple
-          >
-            <q-item-section avatar>
-              <q-icon name="newspaper" />
-            </q-item-section>
-
-            <q-item-section> Tips </q-item-section>
-          </q-item>
-
-          <q-item
             :active="'w-tracker-profile' === getCurrentPathName"
             to="/w/tracker/profile"
             clickable

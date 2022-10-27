@@ -146,20 +146,6 @@ const routes = [
     ],
   },
   {
-    path: "/w/tracker/tips",
-    component: () => import("src/layouts/WebLayout.vue"),
-    children: [
-      {
-        path: "",
-        name: "w-tracker-tips",
-        component: () => import("src/pages/web/tracker/TipsPage.vue"),
-        meta: {
-          isTracker: true,
-        },
-      },
-    ],
-  },
-  {
     path: "/w/tracker/profile",
     component: () => import("src/layouts/WebLayout.vue"),
     children: [
