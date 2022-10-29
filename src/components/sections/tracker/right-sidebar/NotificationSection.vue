@@ -27,7 +27,7 @@
             v-model="tabModel"
             class="q-mb-md text-grey-6"
             indicator-color="red"
-            active-class="text-grey-9 text-weight-medium"
+            active-class="bg-grey-2 text-grey-9 text-weight-medium"
             no-caps
             dense
             shrink
