@@ -1,10 +1,10 @@
 <template>
   <div class="q-pa-md full-width bg-white rounded-borders">
-    <q-card class="full-width bg-grey-1" flat>
+    <q-card class="full-width" flat>
       <q-card-section class="bg-green-1 rounded-borders">
         <div class="text-left text-h6 text-grey-9 q-mb-xs">
           <q-avatar color="green-3">
-            <q-icon name="newspaper" />
+            <q-icon name="tips_and_updates" />
           </q-avatar>
 
           Latest Financial Tips
