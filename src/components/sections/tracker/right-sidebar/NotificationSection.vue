@@ -1,6 +1,6 @@
 <template>
   <div class="full-width">
-    <div class="q-pa-md row items-center">
+    <div class="q-px-md row items-center" style="height: 50px">
       <div class="col col-sm text-left">
         <span class="text-subtitle1 text-grey-9 text-weight-bold">
           Notifications
