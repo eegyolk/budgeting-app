@@ -1,9 +1,5 @@
 <template>
   <q-page class="q-pa-md bg-grey-3 flex flex-center">
-    <div class="row wrap justify-left full-width q-gutter-md">
-      <span class="text-h5 text-weight-medium q-mb-md">Transactions</span>
-    </div>
-
     <div class="row wrap justify-center full-width q-mb-md">
       <graph-section />
     </div>

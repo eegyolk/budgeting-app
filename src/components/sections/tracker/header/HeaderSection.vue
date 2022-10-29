@@ -4,7 +4,14 @@
     style="height: 50px; border-bottom: 1px solid #e0e0e0"
   >
     <q-toolbar>
-      <q-btn class="q-mr-sm" color="grey-9" icon="menu" round dense flat>
+      <q-btn
+        class="q-mr-sm"
+        color="grey-9"
+        icon="menu"
+        @click="toggleLeftSidebarVisibility"
+        dense
+        flat
+      >
         <tool-tip-generic> Menu </tool-tip-generic>
       </q-btn>
 
@@ -124,6 +131,7 @@
         class="q-ml-sm"
         color="grey-9"
         icon="notifications"
+        @click="notificationsVisibility"
         round
         dense
         flat
@@ -132,13 +140,28 @@
         <tool-tip-generic> Notifications </tool-tip-generic>
       </q-btn>
 
-      <q-btn class="q-mx-sm" color="grey-9" icon="settings" round dense flat>
+      <q-btn
+        class="q-mx-sm"
+        color="grey-9"
+        icon="settings"
+        @click="settingsVisibility"
+        round
+        dense
+        flat
+      >
         <tool-tip-generic> Settings </tool-tip-generic>
       </q-btn>
 
       <q-separator vertical inset />
 
-      <q-btn class="q-ml-sm" color="grey-9" round dense flat>
+      <q-btn
+        class="q-ml-sm"
+        color="grey-9"
+        @click="profileVisibility"
+        round
+        dense
+        flat
+      >
         <q-avatar size="sm">
           <img src="https://cdn.quasar.dev/img/avatar.png" />
         </q-avatar>
@@ -149,8 +172,13 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref } from "vue";
+import { defineComponent, computed, ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import { useCommonStore } from "src/stores/common-store";
+import NotificationSection from "components/sections/tracker/right-sidebar/NotificationSection.vue";
+import SettingsSection from "components/sections/tracker/right-sidebar/SettingsSection.vue";
+import ProfileSection from "components/sections/tracker/right-sidebar/ProfileSection.vue";
 import ToolTipGeneric from "components/generics/ToolTipGeneric.vue";
 
 export default defineComponent({
@@ -168,9 +196,52 @@ export default defineComponent({
       return router.currentRoute.value.meta.title;
     });
 
+    const commonStore = useCommonStore();
+    const { rightSidebarVisibility, rightSidebarComponent } =
+      storeToRefs(commonStore);
+
+    onMounted(() => {
+      if (rightSidebarVisibility.value) {
+        commonStore.toggleRightSidebarVisibility();
+      }
+    });
+
     return {
       dateToday,
       getTitle,
+      toggleLeftSidebarVisibility() {
+        commonStore.toggleLeftSidebarVisibility();
+      },
+      notificationsVisibility() {
+        if (rightSidebarComponent.value.name === NotificationSection.name) {
+          commonStore.toggleRightSidebarVisibility();
+        } else {
+          if (!rightSidebarVisibility.value) {
+            commonStore.toggleRightSidebarVisibility();
+          }
+          commonStore.setRightSidebarComponent(NotificationSection);
+        }
+      },
+      settingsVisibility() {
+        if (rightSidebarComponent.value.name === SettingsSection.name) {
+          commonStore.toggleRightSidebarVisibility();
+        } else {
+          if (!rightSidebarVisibility.value) {
+            commonStore.toggleRightSidebarVisibility();
+          }
+          commonStore.setRightSidebarComponent(SettingsSection);
+        }
+      },
+      profileVisibility() {
+        if (rightSidebarComponent.value.name === ProfileSection.name) {
+          commonStore.toggleRightSidebarVisibility();
+        } else {
+          if (!rightSidebarVisibility.value) {
+            commonStore.toggleRightSidebarVisibility();
+          }
+          commonStore.setRightSidebarComponent(ProfileSection);
+        }
+      },
     };
   },
 });

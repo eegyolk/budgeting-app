@@ -1,18 +1,28 @@
 <template>
   <div class="full-width">
-    <notification-section />
+    <component v-if="hasLoadedComponent" :is="rightSidebarComponent" />
   </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import NotificationSection from "components/sections/tracker/right-sidebar/NotificationSection.vue";
+import { defineComponent, computed } from "vue";
+import { storeToRefs } from "pinia";
+import { useCommonStore } from "src/stores/common-store";
 
 export default defineComponent({
   name: "RightSidebarSection",
 
-  components: {
-    NotificationSection,
+  setup() {
+    const commonStore = useCommonStore();
+    const { rightSidebarComponent } = storeToRefs(commonStore);
+    const hasLoadedComponent = computed(() => {
+      return rightSidebarComponent.value.hasOwnProperty("name");
+    });
+
+    return {
+      rightSidebarComponent,
+      hasLoadedComponent,
+    };
   },
 });
 </script>

@@ -4,7 +4,12 @@
       <header-section />
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer
+      show-if-above
+      v-model="leftSidebarVisibility"
+      side="left"
+      bordered
+    >
       <q-scroll-area
         style="
           height: calc(100% - 150px);
@@ -97,7 +102,7 @@
 
     <q-drawer
       show-if-above
-      v-model="rightDrawerOpen"
+      v-model="rightSidebarVisibility"
       side="right"
       class="bg-white"
       bordered
@@ -120,6 +125,8 @@
 <script>
 import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import { useCommonStore } from "src/stores/common-store";
 import HeaderSection from "components/sections/tracker/header/HeaderSection.vue";
 import RightSidebarSection from "components/sections/tracker/right-sidebar/RightSidebarSection.vue";
 
@@ -133,7 +140,6 @@ export default defineComponent({
 
   setup() {
     const router = useRouter();
-
     const isTracker = computed(() => {
       if (
         router.currentRoute.value.hasOwnProperty("meta") &&
@@ -143,14 +149,19 @@ export default defineComponent({
       }
       return false;
     });
-
     const getCurrentPathName = computed(() => {
       return router.currentRoute.value.name;
     });
 
+    const commonStore = useCommonStore();
+    const { leftSidebarVisibility, rightSidebarVisibility } =
+      storeToRefs(commonStore);
+
     return {
       isTracker,
       getCurrentPathName,
+      leftSidebarVisibility,
+      rightSidebarVisibility,
     };
   },
 });
