@@ -26,27 +26,23 @@
           <q-tabs
             v-model="tabModel"
             class="q-mb-md text-grey-6"
-            indicator-color="green"
+            indicator-color="red"
             active-class="text-grey-9 text-weight-medium"
             no-caps
             dense
+            shrink
           >
-            <q-tab name="unread">
-              <div>
-                Unread
-                <q-avatar color="red" text-color="white" size="xs">
-                  50
-                </q-avatar>
-              </div>
+            <q-tab name="unread" icon="mark_chat_unread" label="Unread">
+              <q-badge color="red" floating>4</q-badge>
             </q-tab>
-            <q-tab name="archived" label="Archived" />
-            <q-tab name="all" label="All" />
+            <q-tab name="archived" icon="archive" label="Archived" />
+            <q-tab name="all" icon="apps" label="All" />
           </q-tabs>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-red"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
@@ -105,10 +101,12 @@
             </div>
           </div>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <q-separator spaced />
+
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-red"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
@@ -167,10 +165,12 @@
             </div>
           </div>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <q-separator spaced />
+
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-amber"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
@@ -229,10 +229,12 @@
             </div>
           </div>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <q-separator spaced />
+
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-amber"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
@@ -291,10 +293,12 @@
             </div>
           </div>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <q-separator spaced />
+
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-amber"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
@@ -353,10 +357,12 @@
             </div>
           </div>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <q-separator spaced />
+
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-light-blue"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
@@ -415,10 +421,12 @@
             </div>
           </div>
 
-          <div class="q-mb-sm bg-green-1 row items-center rounded-borders">
+          <q-separator spaced />
+
+          <div class="q-mb-sm row items-center rounded-borders">
             <div
-              class="col-1 col-sm-1 bg-green-6"
-              style="width: 3px; height: 30px"
+              class="col-1 col-sm-1 bg-purple"
+              style="width: 2px; height: 30px"
             ></div>
             <div class="col col-sm q-pl-md q-mr-xs">
               <div class="row">
