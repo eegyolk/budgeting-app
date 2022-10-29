@@ -5,20 +5,18 @@
   >
     <q-toolbar>
       <q-btn
-        class="q-mr-sm"
         color="grey-9"
         icon="menu"
         @click="toggleLeftSidebarVisibility"
         dense
+        round
         flat
       >
         <tool-tip-generic> Menu </tool-tip-generic>
       </q-btn>
 
-      <q-separator vertical inset />
-
       <q-btn-dropdown
-        class="q-mx-sm bg-grey-2"
+        class="q-ml-sm bg-grey-2"
         color="grey-9"
         icon="more_vert"
         label="Workspace"
@@ -32,7 +30,7 @@
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="person_pin" class="q-pr-sm" />Personal
+                  <q-icon name="person_pin" class="q-pr-sm" size="sm" />Personal
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -40,7 +38,8 @@
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="storefront" class="q-pr-sm" />My Business
+                  <q-icon name="storefront" class="q-pr-sm" size="sm" />My
+                  Business
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -50,7 +49,8 @@
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="add_circle" class="q-pr-sm" />Add workspace
+                  <q-icon name="add_circle" class="q-pr-sm" size="sm" />Add
+                  workspace
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -61,7 +61,6 @@
       <q-space />
 
       <q-chip
-        class="q-mx-sm"
         icon="today"
         color="grey-2"
         text-color="grey-9"
@@ -76,7 +75,7 @@
       <q-space />
 
       <q-btn-dropdown
-        class="q-mx-sm bg-grey-2"
+        class="q-ml-sm bg-grey-2"
         color="grey-9"
         icon="add_circle"
         label="Create"
@@ -91,7 +90,11 @@
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="account_balance_wallet" class="q-pr-sm" />Income
+                  <q-icon
+                    name="account_balance_wallet"
+                    class="q-pr-sm"
+                    size="sm"
+                  />Income
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -99,7 +102,11 @@
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="add_shopping_cart" class="q-pr-sm" />Expense
+                  <q-icon
+                    name="add_shopping_cart"
+                    class="q-pr-sm"
+                    size="sm"
+                  />Expense
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -109,7 +116,7 @@
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="event" class="q-pr-sm" />Reminder
+                  <q-icon name="event" class="q-pr-sm" size="sm" />Reminder
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -118,14 +125,12 @@
           <q-item clickable v-close-popup>
             <q-item-section>
               <q-item-label>
-                <q-icon name="flag" class="q-pr-sm" />Goal
+                <q-icon name="flag" class="q-pr-sm" size="sm" />Goal
               </q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
       </q-btn-dropdown>
-
-      <q-separator vertical inset />
 
       <q-btn
         class="q-ml-sm"
@@ -141,7 +146,7 @@
       </q-btn>
 
       <q-btn
-        class="q-mx-sm"
+        class="q-ml-sm"
         color="grey-9"
         icon="settings"
         @click="settingsVisibility"
@@ -151,8 +156,6 @@
       >
         <tool-tip-generic> Settings </tool-tip-generic>
       </q-btn>
-
-      <q-separator vertical inset />
 
       <q-btn
         class="q-ml-sm"
