@@ -1,23 +1,16 @@
 <template>
-  <q-layout v-if="isTracker" view="lHh LpR fFf">
-    <q-header elevated class="bg-primary text-white">
+  <q-layout v-if="isTracker" view="lHr LpR fFf">
+    <q-header flat class="bg-white text-grey-8">
       <q-toolbar>
+        <q-toolbar-title> Clever Monkey </q-toolbar-title>
+
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Clever Monkey
-        </q-toolbar-title>
-
-        <q-btn
-          dense
-          flat
-          round
-          icon="notifications"
-          @click="toggleRightDrawer"
-        />
+        <q-btn icon="notifications" @click="toggleRightDrawer" dense flat round>
+          <q-badge color="negative" floating>4</q-badge>
+        </q-btn>
+        <q-avatar>
+          <img src="https://cdn.quasar.dev/img/avatar.png" />
+        </q-avatar>
       </q-toolbar>
     </q-header>
 
@@ -112,8 +105,14 @@
       </q-img>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- drawer content -->
+    <q-drawer
+      show-if-above
+      v-model="rightDrawerOpen"
+      side="right"
+      class="bg-grey-1"
+      bordered
+    >
+      <notification-section />
     </q-drawer>
 
     <q-page-container>
@@ -131,9 +130,14 @@
 <script>
 import { defineComponent, computed, ref } from "vue";
 import { useRouter } from "vue-router";
+import NotificationSection from "components/sections/tracker/right-sidebar/NotificationSection.vue";
 
 export default defineComponent({
   name: "WebLayout",
+
+  components: {
+    NotificationSection,
+  },
 
   setup() {
     const leftDrawerOpen = ref(false);
