@@ -6,16 +6,13 @@
 
     <q-drawer
       show-if-above
-      v-model="leftSidebarVisibility"
+      v-model="leftSideBarAlwaysOpen"
+      :mini="leftSidebarVisibility"
       side="left"
       bordered
     >
       <q-scroll-area
-        style="
-          height: calc(100% - 150px);
-          margin-top: 150px;
-          border-right: 1px solid #ddd;
-        "
+        style="height: calc(100% - 150px); border-right: 1px solid #ddd"
       >
         <q-list padding>
           <q-item
@@ -84,20 +81,6 @@
           </q-item>
         </q-list>
       </q-scroll-area>
-
-      <q-img
-        class="absolute-top"
-        src="https://cdn.quasar.dev/img/material.png"
-        style="height: 150px"
-      >
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
-          <div class="text-weight-bold">Razvan Stoenescu</div>
-          <div>@rstoenescu</div>
-        </div>
-      </q-img>
     </q-drawer>
 
     <q-drawer
@@ -123,7 +106,7 @@
 </template>
 
 <script>
-import { defineComponent, computed } from "vue";
+import { defineComponent, ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import { useCommonStore } from "src/stores/common-store";
@@ -139,6 +122,7 @@ export default defineComponent({
   },
 
   setup() {
+    const leftSideBarAlwaysOpen = ref(true);
     const router = useRouter();
     const isTracker = computed(() => {
       if (
@@ -158,6 +142,7 @@ export default defineComponent({
       storeToRefs(commonStore);
 
     return {
+      leftSideBarAlwaysOpen,
       isTracker,
       getCurrentPathName,
       leftSidebarVisibility,
