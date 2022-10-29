@@ -109,10 +109,10 @@
       show-if-above
       v-model="rightDrawerOpen"
       side="right"
-      class="bg-grey-1"
+      class="bg-white"
       bordered
     >
-      <notification-section />
+      <right-sidebar-section />
     </q-drawer>
 
     <q-page-container>
@@ -130,13 +130,13 @@
 <script>
 import { defineComponent, computed, ref } from "vue";
 import { useRouter } from "vue-router";
-import NotificationSection from "components/sections/tracker/right-sidebar/NotificationSection.vue";
+import RightSidebarSection from "components/sections/tracker/right-sidebar/RightSidebarSection.vue";
 
 export default defineComponent({
   name: "WebLayout",
 
   components: {
-    NotificationSection,
+    RightSidebarSection,
   },
 
   setup() {
