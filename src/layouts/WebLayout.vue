@@ -1,17 +1,7 @@
 <template>
   <q-layout v-if="isTracker" view="lHr LpR fFf">
     <q-header flat class="bg-white text-grey-8">
-      <q-toolbar>
-        <q-toolbar-title> Clever Monkey </q-toolbar-title>
-
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-        <q-btn icon="notifications" @click="toggleRightDrawer" dense flat round>
-          <q-badge color="negative" floating>4</q-badge>
-        </q-btn>
-        <q-avatar>
-          <img src="https://cdn.quasar.dev/img/avatar.png" />
-        </q-avatar>
-      </q-toolbar>
+      <header-section />
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
@@ -33,7 +23,7 @@
               <q-icon name="dashboard" />
             </q-item-section>
 
-            <q-item-section> Dashboard </q-item-section>
+            <q-item-section> Overview </q-item-section>
           </q-item>
 
           <q-item
@@ -128,21 +118,20 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref } from "vue";
+import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
+import HeaderSection from "components/sections/tracker/header/HeaderSection.vue";
 import RightSidebarSection from "components/sections/tracker/right-sidebar/RightSidebarSection.vue";
 
 export default defineComponent({
   name: "WebLayout",
 
   components: {
+    HeaderSection,
     RightSidebarSection,
   },
 
   setup() {
-    const leftDrawerOpen = ref(false);
-    const rightDrawerOpen = ref(false);
-
     const router = useRouter();
 
     const isTracker = computed(() => {
@@ -160,19 +149,8 @@ export default defineComponent({
     });
 
     return {
-      leftDrawerOpen,
-      rightDrawerOpen,
-
       isTracker,
       getCurrentPathName,
-
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
-
-      toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value;
-      },
     };
   },
 });

@@ -1,10 +1,6 @@
 <template>
-  <q-page class="q-pa-md bg-grey-3 flex flex-center">
-    <div class="row wrap justify-left full-width q-gutter-md">
-      <span class="text-h5 text-weight-medium q-mb-md">Overview</span>
-    </div>
-
-    <div class="row wrap justify-center full-width q-mb-md">
+  <q-page class="q-pa-md bg-grey-1 flex flex-center">
+    <!-- <div class="row wrap justify-center full-width q-mb-md">
       <graph-section />
     </div>
 
@@ -22,7 +18,7 @@
 
     <div class="row wrap justify-center full-width q-mb-md">
       <goals-section />
-    </div>
+    </div> -->
   </q-page>
 </template>
 
@@ -37,11 +33,11 @@ import GoalsSection from "components/sections/tracker/home/GoalsSection.vue";
 export default defineComponent({
   name: "HomePage",
   components: {
-    GraphSection,
-    IncomeTransactionSection,
-    ExpensesTransactionSection,
-    FinancialTipsSection,
-    GoalsSection,
+    // GraphSection,
+    // IncomeTransactionSection,
+    // ExpensesTransactionSection,
+    // FinancialTipsSection,
+    // GoalsSection,
   },
 });
 </script>
