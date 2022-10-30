@@ -1,7 +1,13 @@
 <template>
-  <div class="full-width">
+  <q-drawer
+    show-if-above
+    v-model="rightSidebarVisibility"
+    side="right"
+    class="bg-white"
+    bordered
+  >
     <component v-if="hasLoadedComponent" :is="rightSidebarComponent" />
-  </div>
+  </q-drawer>
 </template>
 
 <script>
@@ -14,12 +20,14 @@ export default defineComponent({
 
   setup() {
     const commonStore = useCommonStore();
-    const { rightSidebarComponent } = storeToRefs(commonStore);
+    const { rightSidebarVisibility, rightSidebarComponent } =
+      storeToRefs(commonStore);
     const hasLoadedComponent = computed(() => {
       return rightSidebarComponent.value.hasOwnProperty("name");
     });
 
     return {
+      rightSidebarVisibility,
       rightSidebarComponent,
       hasLoadedComponent,
     };

@@ -1,177 +1,183 @@
 <template>
-  <div
-    class="full-width"
-    style="height: 50px; border-bottom: 1px solid #e0e0e0"
-  >
-    <q-toolbar>
-      <q-btn
-        color="grey-9"
-        icon="menu"
-        @click="toggleLeftSidebarVisibility"
-        dense
-        round
-        flat
-      >
-        <tool-tip-generic> Menu </tool-tip-generic>
-      </q-btn>
+  <q-header flat class="bg-white text-grey-8">
+    <div
+      class="full-width"
+      style="height: 50px; border-bottom: 1px solid #e0e0e0"
+    >
+      <q-toolbar>
+        <q-btn
+          color="grey-9"
+          icon="menu"
+          @click="toggleLeftSidebarVisibility"
+          dense
+          round
+          flat
+        >
+          <tool-tip-generic> Menu </tool-tip-generic>
+        </q-btn>
 
-      <q-btn-dropdown
-        class="q-ml-sm bg-grey-2"
-        color="grey-9"
-        icon="more_vert"
-        label="Workspace"
-        rounded
-        no-caps
-        flat
-        dense
-      >
-        <q-list class="q-qutter-none rounded-borders" bordered padding>
-          <q-list>
+        <q-btn-dropdown
+          class="q-ml-sm bg-grey-2"
+          color="grey-9"
+          icon="more_vert"
+          label="Workspace"
+          rounded
+          no-caps
+          flat
+          dense
+        >
+          <q-list class="q-qutter-none rounded-borders" bordered padding>
+            <q-list>
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <q-item-label>
+                    <q-icon
+                      name="person_pin"
+                      class="q-pr-sm"
+                      size="sm"
+                    />Personal
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <q-item-label>
+                    <q-icon name="storefront" class="q-pr-sm" size="sm" />My
+                    Business
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator spaced />
+
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <q-item-label>
+                    <q-icon name="add_circle" class="q-pr-sm" size="sm" />Add
+                    workspace
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-list>
+        </q-btn-dropdown>
+
+        <q-space />
+
+        <q-chip
+          icon="today"
+          color="grey-2"
+          text-color="grey-9"
+          :clickable="false"
+          :ripple="false"
+          rounded
+        >
+          <span class="q-ml-sm">Oct. 29, 2022</span>
+          <tool-tip-generic> Today is Oct. 29, 2022 </tool-tip-generic>
+        </q-chip>
+
+        <q-space />
+
+        <q-btn-dropdown
+          class="q-ml-sm bg-grey-2"
+          color="grey-9"
+          icon="add_circle"
+          label="Create"
+          dropdown-icon="more_vert"
+          rounded
+          no-caps
+          flat
+          dense
+        >
+          <q-list class="q-qutter-none rounded-borders" bordered padding>
+            <q-list>
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <q-item-label>
+                    <q-icon
+                      name="account_balance_wallet"
+                      class="q-pr-sm"
+                      size="sm"
+                    />Income
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <q-item-label>
+                    <q-icon
+                      name="add_shopping_cart"
+                      class="q-pr-sm"
+                      size="sm"
+                    />Expense
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator spaced />
+
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <q-item-label>
+                    <q-icon name="event" class="q-pr-sm" size="sm" />Reminder
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+
             <q-item clickable v-close-popup>
               <q-item-section>
                 <q-item-label>
-                  <q-icon name="person_pin" class="q-pr-sm" size="sm" />Personal
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-close-popup>
-              <q-item-section>
-                <q-item-label>
-                  <q-icon name="storefront" class="q-pr-sm" size="sm" />My
-                  Business
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-separator spaced />
-
-            <q-item clickable v-close-popup>
-              <q-item-section>
-                <q-item-label>
-                  <q-icon name="add_circle" class="q-pr-sm" size="sm" />Add
-                  workspace
+                  <q-icon name="flag" class="q-pr-sm" size="sm" />Goal
                 </q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
-        </q-list>
-      </q-btn-dropdown>
+        </q-btn-dropdown>
 
-      <q-space />
+        <q-btn
+          class="q-ml-sm"
+          color="grey-9"
+          icon="notifications"
+          @click="notificationsVisibility"
+          round
+          dense
+          flat
+        >
+          <q-badge color="red" floating>4</q-badge>
+          <tool-tip-generic> Notifications </tool-tip-generic>
+        </q-btn>
 
-      <q-chip
-        icon="today"
-        color="grey-2"
-        text-color="grey-9"
-        :clickable="false"
-        :ripple="false"
-        rounded
-      >
-        <span class="q-ml-sm">Oct. 29, 2022</span>
-        <tool-tip-generic> Today is Oct. 29, 2022 </tool-tip-generic>
-      </q-chip>
+        <q-btn
+          class="q-ml-sm"
+          color="grey-9"
+          icon="settings"
+          @click="settingsVisibility"
+          round
+          dense
+          flat
+        >
+          <tool-tip-generic> Settings </tool-tip-generic>
+        </q-btn>
 
-      <q-space />
-
-      <q-btn-dropdown
-        class="q-ml-sm bg-grey-2"
-        color="grey-9"
-        icon="add_circle"
-        label="Create"
-        dropdown-icon="more_vert"
-        rounded
-        no-caps
-        flat
-        dense
-      >
-        <q-list class="q-qutter-none rounded-borders" bordered padding>
-          <q-list>
-            <q-item clickable v-close-popup>
-              <q-item-section>
-                <q-item-label>
-                  <q-icon
-                    name="account_balance_wallet"
-                    class="q-pr-sm"
-                    size="sm"
-                  />Income
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-close-popup>
-              <q-item-section>
-                <q-item-label>
-                  <q-icon
-                    name="add_shopping_cart"
-                    class="q-pr-sm"
-                    size="sm"
-                  />Expense
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-separator spaced />
-
-            <q-item clickable v-close-popup>
-              <q-item-section>
-                <q-item-label>
-                  <q-icon name="event" class="q-pr-sm" size="sm" />Reminder
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-
-          <q-item clickable v-close-popup>
-            <q-item-section>
-              <q-item-label>
-                <q-icon name="flag" class="q-pr-sm" size="sm" />Goal
-              </q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-list>
-      </q-btn-dropdown>
-
-      <q-btn
-        class="q-ml-sm"
-        color="grey-9"
-        icon="notifications"
-        @click="notificationsVisibility"
-        round
-        dense
-        flat
-      >
-        <q-badge color="red" floating>4</q-badge>
-        <tool-tip-generic> Notifications </tool-tip-generic>
-      </q-btn>
-
-      <q-btn
-        class="q-ml-sm"
-        color="grey-9"
-        icon="settings"
-        @click="settingsVisibility"
-        round
-        dense
-        flat
-      >
-        <tool-tip-generic> Settings </tool-tip-generic>
-      </q-btn>
-
-      <q-btn
-        class="q-ml-sm"
-        color="grey-9"
-        @click="profileVisibility"
-        round
-        dense
-        flat
-      >
-        <q-avatar size="sm">
-          <img src="https://cdn.quasar.dev/img/avatar.png" />
-        </q-avatar>
-        <tool-tip-generic> Profile </tool-tip-generic>
-      </q-btn>
-    </q-toolbar>
-  </div>
+        <q-btn
+          class="q-ml-sm"
+          color="grey-9"
+          @click="profileVisibility"
+          round
+          dense
+          flat
+        >
+          <q-avatar size="sm">
+            <img src="https://cdn.quasar.dev/img/avatar.png" />
+          </q-avatar>
+          <tool-tip-generic> Profile </tool-tip-generic>
+        </q-btn>
+      </q-toolbar>
+    </div>
+  </q-header>
 </template>
 
 <script>
